@@ -353,6 +353,132 @@
             flex-wrap: wrap;
         }
 
+        /* Bunker widget */
+        .bunker-widget {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 40px 32px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+        }
+
+        .bunker-widget h2 {
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+
+        .bunker-widget .subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .bunker-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(74, 222, 128, 0.1);
+            color: #4ade80;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .bunker-status .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .bunker-uri-box {
+            background: var(--bg-code);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .bunker-uri-box code {
+            flex: 1;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            word-break: break-all;
+            line-height: 1.4;
+        }
+
+        .bunker-uri-box .copy-uri-btn {
+            flex-shrink: 0;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .bunker-uri-box .copy-uri-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+        }
+
+        .bunker-hint {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .bunker-warning {
+            color: #fb923c;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .btn-stop {
+            background: transparent;
+            color: #f87171;
+            border: 1px solid #f87171;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .btn-stop:hover {
+            background: rgba(248, 113, 113, 0.1);
+        }
+
+        .bunker-install {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .bunker-install a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .bunker-install a:hover { text-decoration: underline; }
+
         /* Footer */
         footer {
             text-align: center;
@@ -373,7 +499,7 @@
         @media (max-width: 640px) {
             .container { padding: 40px 16px; }
             .hero h1 { font-size: 2rem; }
-            .code-section, .demo-section, .events-section { padding: 24px 16px; }
+            .code-section, .demo-section, .events-section, .bunker-widget { padding: 24px 16px; }
             .code-block { font-size: 0.8rem; padding: 16px; }
         }
     </style>
@@ -424,6 +550,39 @@
             <p class="subtitle">If you have <a href="https://nostrkey.com" style="color:var(--accent);text-decoration:none;">NostrKey</a> installed, click the button below.</p>
             <div id="nostr-login" data-theme="dark"></div>
             <div class="demo-result" id="demo-result"></div>
+        </div>
+
+        <!-- Bunker URL Generator -->
+        <div class="bunker-widget" id="bunker-widget">
+            <h2>Your Keys, Your Terms</h2>
+            <p class="subtitle">Create a bunker URL that lets any Nostr app request signatures through a relay. Your private key never leaves your browser.</p>
+
+            <!-- State: no extension -->
+            <div id="bunker-no-ext" style="display:none">
+                <p class="bunker-install">You need <a href="https://nostrkey.com">NostrKey</a> to create a bunker URL. It's free, takes 30 seconds.</p>
+                <div style="margin-top:16px">
+                    <a href="https://nostrkey.com" class="btn btn-primary" style="font-size:0.9rem;padding:12px 24px;">Get NostrKey</a>
+                </div>
+            </div>
+
+            <!-- State: ready -->
+            <div id="bunker-ready" style="display:none">
+                <button id="btn-create-bunker" class="btn btn-primary" style="font-size:0.95rem;">Create My Bunker URL</button>
+            </div>
+
+            <!-- State: active -->
+            <div id="bunker-active" style="display:none">
+                <div class="bunker-status"><span class="dot"></span> Bunker Active</div>
+                <div class="bunker-uri-box">
+                    <code id="bunker-uri-display"></code>
+                    <button class="copy-uri-btn" id="btn-copy-uri">Copy</button>
+                </div>
+                <p class="bunker-hint">Copy this URL and paste it into any app that supports NIP-46 bunker login &mdash; Amethyst, Coracle, Nostrudel, or any other Nostr client.</p>
+                <p class="bunker-warning">This URL is active as long as this page is open. Closing this tab will deactivate it.</p>
+                <div style="margin-top:20px">
+                    <button class="btn-stop" id="btn-stop-bunker">Disconnect</button>
+                </div>
+            </div>
         </div>
 
         <!-- Features -->
@@ -566,6 +725,11 @@
                 <h3>Can I use my own relay?</h3>
                 <p>Yes. Add <code>data-relay="wss://your-relay.com"</code> to the button div. When users log in, the relay is automatically added to their key manager.</p>
             </div>
+
+            <div class="faq-item">
+                <h3>What is a bunker URL?</h3>
+                <p>A bunker URL (NIP-46) lets you log into Nostr apps without giving them your private key. Instead, signing requests are routed through a relay back to your key manager. You stay in control &mdash; your keys never leave your browser.</p>
+            </div>
         </div>
 
         <!-- CTA -->
@@ -595,6 +759,77 @@
         document.addEventListener('nostr:login', function(e) {
             document.getElementById('demo-result').textContent = 'Logged in: ' + e.detail.pubkey;
         });
+
+        // === Bunker URL Generator ===
+        var bunkerActive = false;
+
+        function initBunkerWidget() {
+            // Check after a short delay to let extension inject window.nostr
+            setTimeout(function() {
+                if (window.nostr && window.nostr.nip46) {
+                    document.getElementById('bunker-ready').style.display = '';
+                } else {
+                    document.getElementById('bunker-no-ext').style.display = '';
+                }
+            }, 1000);
+        }
+
+        document.getElementById('btn-create-bunker').addEventListener('click', async function() {
+            var btn = this;
+            btn.disabled = true;
+            btn.textContent = 'Creating\u2026';
+
+            try {
+                var result = await window.nostr.nip46.startBunker({
+                    relayUrls: ['wss://relay.nostrkey.com']
+                });
+
+                if (!result.success) throw new Error(result.error || 'Failed to start bunker');
+
+                bunkerActive = true;
+                document.getElementById('bunker-uri-display').textContent = result.uri;
+                document.getElementById('bunker-ready').style.display = 'none';
+                document.getElementById('bunker-active').style.display = '';
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Create My Bunker URL';
+                alert('Could not start bunker: ' + err.message);
+            }
+        });
+
+        document.getElementById('btn-copy-uri').addEventListener('click', function() {
+            var uri = document.getElementById('bunker-uri-display').textContent;
+            var btn = this;
+            navigator.clipboard.writeText(uri).then(function() {
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+            });
+        });
+
+        document.getElementById('btn-stop-bunker').addEventListener('click', function() {
+            if (window.nostr && window.nostr.nip46) {
+                window.nostr.nip46.stopBunker();
+            }
+            bunkerActive = false;
+            document.getElementById('bunker-active').style.display = 'none';
+            document.getElementById('bunker-ready').style.display = '';
+            var btn = document.getElementById('btn-create-bunker');
+            btn.disabled = false;
+            btn.textContent = 'Create My Bunker URL';
+        });
+
+        // Stop bunker when leaving the page
+        window.addEventListener('beforeunload', function(e) {
+            if (bunkerActive) {
+                if (window.nostr && window.nostr.nip46) {
+                    window.nostr.nip46.stopBunker();
+                }
+                e.preventDefault();
+                e.returnValue = 'Your bunker URL will stop working if you leave this page.';
+            }
+        });
+
+        initBunkerWidget();
 
         // Copy code blocks
         function copyCode(id) {
