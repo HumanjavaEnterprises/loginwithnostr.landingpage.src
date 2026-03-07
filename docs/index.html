@@ -586,6 +586,48 @@
             </div>
         </div>
 
+        <!-- When to use Bunker -->
+        <div class="when-bunker" style="margin:48px 0;padding:36px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+            <h2 style="color:var(--accent);font-size:1.4rem;margin-bottom:8px;">When should I use a Bunker URL?</h2>
+            <p style="color:var(--text-muted);margin-bottom:24px;">A bunker URL routes signing requests through a relay so your private key never leaves your device. Use it when direct key access isn't ideal.</p>
+            <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+                <thead>
+                    <tr style="border-bottom:2px solid var(--border);text-align:left;">
+                        <th style="padding:10px 12px;color:var(--text);">Scenario</th>
+                        <th style="padding:10px 12px;color:var(--accent);text-align:center;">NIP-07<br><span style="font-weight:400;font-size:0.8rem;color:var(--text-muted);">(direct)</span></th>
+                        <th style="padding:10px 12px;color:var(--accent);text-align:center;">Bunker URL<br><span style="font-weight:400;font-size:0.8rem;color:var(--text-muted);">(NIP-46)</span></th>
+                    </tr>
+                </thead>
+                <tbody style="color:var(--text-muted);">
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:10px 12px;">Your own browser, trusted site</td>
+                        <td style="padding:10px 12px;text-align:center;color:#4ade80;">Yes</td>
+                        <td style="padding:10px 12px;text-align:center;color:var(--text-muted);">Either</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:10px 12px;">Shared or public computer</td>
+                        <td style="padding:10px 12px;text-align:center;color:#f87171;">No</td>
+                        <td style="padding:10px 12px;text-align:center;color:#4ade80;">Yes</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:10px 12px;">Site you're trying for the first time</td>
+                        <td style="padding:10px 12px;text-align:center;color:var(--text-muted);">Maybe</td>
+                        <td style="padding:10px 12px;text-align:center;color:#4ade80;">Yes</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:10px 12px;">Automated or long-running session</td>
+                        <td style="padding:10px 12px;text-align:center;color:#f87171;">No</td>
+                        <td style="padding:10px 12px;text-align:center;color:#4ade80;">Yes</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px 12px;">Mobile browser without extension support</td>
+                        <td style="padding:10px 12px;text-align:center;color:#f87171;">No</td>
+                        <td style="padding:10px 12px;text-align:center;color:#4ade80;">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <!-- Features -->
         <div class="features">
             <div class="feature">
