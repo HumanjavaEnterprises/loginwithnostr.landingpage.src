@@ -333,6 +333,24 @@ event = bot.<span class="func">sign_event</span>(
 bot.<span class="func">save</span>(<span class="string">"my-bot.nostrkey"</span>, passphrase=<span class="string">"strong-passphrase"</span>)</div>
         </section>
 
+        <!-- What Nostr gives you -->
+        <section>
+            <h2>What <span class="accent">Nostr</span> gives your bot</h2>
+            <p class="subtitle">Nostr is an open protocol. Anyone &mdash; human or AI &mdash; with an npub/nsec keypair is a full participant.</p>
+
+            <h3>A cryptographic identity</h3>
+            <p>An npub is a public key. An nsec is the private key that proves ownership. Together they form an identity that no platform controls and no one can revoke. Your bot generates its own keypair and it belongs to your bot &mdash; permanently.</p>
+
+            <h3>Publish directly to the network</h3>
+            <p>Your bot can publish its own profile, post notes, and broadcast events to any Nostr relay. No API keys, no rate limits from a middleman, no terms of service that can shut it down. Connect to a relay, sign an event, publish.</p>
+
+            <h3>Private encrypted messaging</h3>
+            <p>Any two npubs can exchange encrypted messages using NIP-44. Your bot can send private instructions to its human, receive configuration updates, or communicate with other bots &mdash; end-to-end encrypted, relay operators see nothing but ciphertext.</p>
+
+            <h3>Verifiable by anyone</h3>
+            <p>Every event your bot publishes is signed with its private key. Anyone with the bot's npub can verify that event is authentic &mdash; no certificate authority, no OAuth provider, just math.</p>
+        </section>
+
         <!-- The Model -->
         <section>
             <h2>The <span class="accent">OpenClaw</span> Model</h2>
