@@ -586,6 +586,22 @@
             </div>
         </div>
 
+        <!-- OpenClaw -->
+        <div style="margin:32px 0;padding:36px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+            <h2 style="color:var(--accent);font-size:1.4rem;margin-bottom:8px;">Building an AI agent?</h2>
+            <p style="color:var(--text-muted);margin-bottom:16px;">Your bot deserves its own identity too. The <strong style="color:var(--text);">NostrKey Python SDK</strong> lets OpenClaw AI entities generate their own keypairs, sign events, encrypt data, and interact on Nostr as first-class participants.</p>
+            <div class="code-block" id="code-openclaw" style="margin-bottom:16px;">
+                <button class="copy-btn" onclick="copyCode('code-openclaw')">Copy</button>
+<span class="keyword">from</span> nostrkey <span class="keyword">import</span> Identity
+
+bot = Identity.<span class="func">generate</span>()
+event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</span>, content=<span class="string">"Hello from an AI"</span>)</div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="/openclaw" class="btn btn-primary" style="font-size:0.9rem;padding:12px 24px;">Learn about OpenClaw</a>
+                <a href="https://pypi.org/project/nostrkey/" class="btn btn-secondary" style="font-size:0.9rem;padding:12px 24px;">pip install nostrkey</a>
+            </div>
+        </div>
+
         <!-- When to use Bunker -->
         <div class="when-bunker" style="margin:48px 0;padding:36px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
             <h2 style="color:var(--accent);font-size:1.4rem;margin-bottom:8px;">When should I use a Bunker URL?</h2>
@@ -787,8 +803,8 @@
 
         <footer>
             <p>
-                LoginWithNostr is part of the <a href="https://humanjava.com">Humanjava</a> ecosystem &middot;
                 Powered by <a href="https://nostrkey.com">NostrKey</a> &middot;
+                <a href="/openclaw">OpenClaw</a> &middot;
                 <a href="https://github.com/HumanjavaEnterprises">GitHub</a>
             </p>
         </footer>
