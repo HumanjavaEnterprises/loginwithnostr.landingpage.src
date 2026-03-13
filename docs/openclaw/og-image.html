@@ -77,29 +77,52 @@
         h1 span { color: #fbbf24; }
 
         .subtitle {
-            font-size: 26px;
+            font-size: 24px;
             color: #94a3b8;
             line-height: 1.5;
             max-width: 700px;
             position: relative;
             z-index: 1;
+            margin-bottom: 36px;
         }
 
-        .code-hint {
-            position: absolute;
-            bottom: 60px;
-            right: 80px;
-            font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
-            font-size: 20px;
-            color: #475569;
+        .skill-cards {
+            display: flex;
+            gap: 40px;
+            position: relative;
             z-index: 1;
         }
 
-        .code-hint span { color: #fbbf24; }
+        .skill-card {
+            background: #1e293b;
+            border: 1px solid #475569;
+            border-radius: 12px;
+            padding: 16px 20px;
+            flex: 1;
+        }
+
+        .skill-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .skill-card h3 small {
+            font-size: 20px;
+            font-weight: 400;
+            color: #94a3b8;
+            margin-left: 8px;
+        }
+
+        .skill-card code {
+            font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+            font-size: 17px;
+            color: #fbbf24;
+        }
 
         .url {
             position: absolute;
-            bottom: 60px;
+            bottom: 48px;
             left: 80px;
             font-size: 18px;
             color: #64748b;
@@ -109,10 +132,19 @@
 </head>
 <body>
     <div class="card">
-        <div class="badge">pip install nostrkey</div>
-        <h1>Give Your AI<br>Its Own <span>Identity</span></h1>
-        <p class="subtitle">Python SDK for AI entities to generate Nostr keypairs, sign events, and encrypt data.</p>
-        <div class="code-hint">bot = Identity.<span>generate</span>()</div>
+        <div class="badge">OpenClaw Skills for AI Agents</div>
+        <h1>Give Your AI Its Own<br><span>Identity</span> and <span>Wallet</span></h1>
+        <p class="subtitle">Python SDKs for AI agents — cryptographic identity and Lightning wallet access on the Nostr protocol.</p>
+        <div class="skill-cards">
+            <div class="skill-card">
+                <h3>NostrKey <small>Identity</small></h3>
+                <code>pip install nostrkey</code>
+            </div>
+            <div class="skill-card">
+                <h3>NostrWalletConnect <small>Wallet</small></h3>
+                <code>pip install nostrwalletconnect</code>
+            </div>
+        </div>
         <div class="url">loginwithnostr.com/openclaw</div>
     </div>
 </body>
