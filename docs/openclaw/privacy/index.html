@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0f172a">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — OpenClaw</title>
+    <meta name="description" content="Privacy policy for OpenClaw Python SDKs and the loginwithnostr.com website.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' stroke='%23fbbf24' stroke-width='4' fill='%231e293b'/><path d='M30 50h40M50 30v40' stroke='%23fbbf24' stroke-width='6' stroke-linecap='round' fill='none'/></svg>">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #fbbf24;
+            --accent-dim: rgba(251, 191, 36, 0.15);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+        .nav { margin-bottom: 48px; }
+        .nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
+        .nav a:hover { color: var(--text); }
+        .nav .sep { color: var(--border); margin: 0 8px; }
+        h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .updated { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 32px; }
+        h2 { font-size: 1.25rem; font-weight: 700; margin: 32px 0 12px; color: var(--accent); }
+        p, ul { margin-bottom: 16px; color: var(--text-muted); }
+        ul { padding-left: 24px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin: 24px 0; }
+        footer { text-align: center; padding: 48px 0 24px; color: var(--text-muted); font-size: 0.85rem; }
+        footer a { color: var(--text-muted); }
+        footer a:hover { color: var(--text); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">Login with Nostr</a>
+            <span class="sep">/</span>
+            <a href="/openclaw">OpenClaw</a>
+            <span class="sep">/</span>
+            <span style="color:var(--text);">Privacy</span>
+        </div>
+
+        <h1>Privacy <span>Policy</span></h1>
+        <p class="updated">Last updated: March 13, 2026</p>
+
+        <div class="card">
+            <p style="color:var(--text);margin-bottom:0;"><strong>The short version:</strong> OpenClaw packages run entirely on your machine. We don't collect telemetry, require accounts, or phone home. Your agent's data never leaves your infrastructure.</p>
+        </div>
+
+        <h2>Who We Are</h2>
+        <p>OpenClaw is maintained by <a href="https://humanjava.com">Humanjava Enterprises Inc.</a> This policy covers the OpenClaw Python packages (nostrkey, nostrwalletconnect, nostrcalendar, socialcard, sense-music, nostrsocial) and the loginwithnostr.com website.</p>
+
+        <h2>The Packages</h2>
+        <p>OpenClaw packages are open-source libraries published to PyPI under the MIT license. When you install and use them:</p>
+        <ul>
+            <li><strong>No telemetry.</strong> The packages do not collect usage data, analytics, crash reports, or any other information about how you use them.</li>
+            <li><strong>No network calls.</strong> Except where the package's core function requires it (e.g., nostrwalletconnect communicating with your wallet via Nostr relays, nostrcalendar publishing to relays you configure), the packages make no network connections.</li>
+            <li><strong>No accounts.</strong> There are no user accounts, API keys, or registration required.</li>
+            <li><strong>Local data only.</strong> Any data the packages store (social graphs, keys, calendar events) stays on your machine or infrastructure. We never see it.</li>
+        </ul>
+
+        <h2>NostrSocial Specifically</h2>
+        <p>The nostrsocial package manages a social graph locally. It's worth being explicit about what it does and doesn't do:</p>
+        <ul>
+            <li><strong>Contact data stays local.</strong> Your contacts, trust tiers, interaction history, and signal patterns are stored wherever you configure FileStorage to point. We have no access.</li>
+            <li><strong>No external lookups.</strong> Cross-channel recognition only checks contacts you've already added. It never queries external services, scrapes profiles, or mines data.</li>
+            <li><strong>Device secret is yours.</strong> The HMAC device secret that generates proxy npubs is generated locally and never transmitted.</li>
+            <li><strong>Guardrails run locally.</strong> Content screening uses bundled JSON files processed on your machine. No content is sent to external services for analysis.</li>
+        </ul>
+
+        <h2>The Website</h2>
+        <p>loginwithnostr.com is a static site hosted on GitHub Pages. We use:</p>
+        <ul>
+            <li><strong>No cookies.</strong> We don't set any cookies.</li>
+            <li><strong>No analytics.</strong> No Google Analytics, no Plausible, no tracking pixels.</li>
+            <li><strong>GitHub Pages hosting.</strong> GitHub may collect standard server logs (IP addresses, timestamps) as part of their hosting. See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection">GitHub's data collection policy</a>.</li>
+        </ul>
+
+        <h2>The Login with Nostr Widget</h2>
+        <p>The Login with Nostr JavaScript widget (login.js) facilitates Nostr authentication between your website and the user's browser extension or NIP-46 bunker. It:</p>
+        <ul>
+            <li>Runs entirely in the user's browser</li>
+            <li>Does not send data to loginwithnostr.com or any Humanjava server</li>
+            <li>Communicates only with the user's chosen Nostr signer (extension or bunker relay)</li>
+        </ul>
+
+        <h2>Third-Party Services</h2>
+        <p>Some packages interact with infrastructure you choose:</p>
+        <ul>
+            <li><strong>Nostr relays</strong> — When publishing events or connecting to a bunker, your agent communicates with relays you configure. Each relay has its own privacy policy.</li>
+            <li><strong>Lightning wallets</strong> — NostrWalletConnect connects to your wallet provider via NIP-47. Your wallet provider's policies apply.</li>
+            <li><strong>PyPI</strong> — Package installation goes through PyPI's infrastructure. See <a href="https://policies.python.org/pypi.org/Privacy-Policy/">PyPI's privacy policy</a>.</li>
+        </ul>
+
+        <h2>Children</h2>
+        <p>OpenClaw packages and this website are developer tools. They are not directed at children under 13 and we do not knowingly collect information from children.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes, we'll update the date at the top of this page. For significant changes, we'll note it in the package changelog.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about this policy? See our <a href="/openclaw/support/">support page</a> or file an issue on <a href="https://github.com/HumanjavaEnterprises">GitHub</a>.</p>
+
+        <footer>
+            <a href="/">Login with Nostr</a> &middot;
+            <a href="/openclaw">OpenClaw</a> &middot;
+            <a href="/openclaw/terms/">Terms</a> &middot;
+            <a href="/openclaw/support/">Support</a> &middot;
+            <a href="https://github.com/HumanjavaEnterprises">GitHub</a>
+            <br><br>
+            &copy; 2026 <a href="https://humanjava.com">Humanjava Enterprises Inc.</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenClaw — Identity, Wallet and Presence for AI Agents</title>
-    <meta name="description" content="Python SDKs for AI entities. Cryptographic identity (NostrKey), Lightning wallet access (NostrWalletConnect), and sovereign scheduling (NostrCalendar) on the open Nostr protocol.">
+    <title>OpenClaw — Identity, Wallet, Presence and Relationships for AI Agents</title>
+    <meta name="description" content="Python SDKs for AI entities. Cryptographic identity (NostrKey), Lightning wallet access (NostrWalletConnect), sovereign scheduling (NostrCalendar), and social graph (NostrSocial) on the open Nostr protocol.">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://loginwithnostr.com/openclaw">
-    <meta property="og:title" content="OpenClaw — Identity, Wallet and Presence for AI Agents">
-    <meta property="og:description" content="Python SDKs for AI agents — cryptographic identity, Lightning wallet access, and sovereign scheduling. pip install nostrkey nostrwalletconnect nostrcalendar">
+    <meta property="og:title" content="OpenClaw — Identity, Wallet, Presence and Relationships for AI Agents">
+    <meta property="og:description" content="Python SDKs for AI agents — cryptographic identity, Lightning wallet, scheduling, and social graph. pip install nostrkey nostrwalletconnect nostrcalendar nostrsocial">
     <meta property="og:image" content="https://loginwithnostr.com/openclaw/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OpenClaw — Identity, Wallet and Presence for AI Agents">
-    <meta name="twitter:description" content="Python SDKs for AI agents — cryptographic identity, Lightning wallet access, and sovereign scheduling on Nostr.">
+    <meta name="twitter:title" content="OpenClaw — Identity, Wallet, Presence and Relationships for AI Agents">
+    <meta name="twitter:description" content="Python SDKs for AI agents — cryptographic identity, Lightning wallet, scheduling, and social graph on Nostr.">
     <meta name="twitter:image" content="https://loginwithnostr.com/openclaw/og-image.png">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' stroke='%23fbbf24' stroke-width='4' fill='%231e293b'/><path d='M30 50h40M50 30v40' stroke='%23fbbf24' stroke-width='6' stroke-linecap='round' fill='none'/></svg>">
@@ -285,7 +285,7 @@
         /* Skill cards */
         .skill-cards {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 48px;
         }
@@ -368,7 +368,7 @@
         .card-link-secondary:hover { border-color: var(--accent); }
 
         @media (max-width: 900px) {
-            .skill-cards { grid-template-columns: 1fr 1fr; }
+            .skill-cards { grid-template-columns: 1fr 1fr; } /* stays 2x2 */
         }
 
         @media (max-width: 640px) {
@@ -392,15 +392,15 @@
         <!-- Hero -->
         <div class="hero">
             <div class="hero-badge">OpenClaw Skills for AI Agents</div>
-            <h1>Give Your AI Its Own<br><span>Identity</span>, a <span>Wallet</span> and <span>Presence</span></h1>
-            <p>Python SDKs for AI entities to operate as sovereign identities on the open internet &mdash; with cryptographic keys, Lightning wallet access, and the ability to manage a scheduling calendar.</p>
+            <h1>Give Your AI Its Own<br><span>Identity</span>, <span>Wallet</span>, <span>Presence</span> and <span>Relationships</span></h1>
+            <p>Python SDKs for AI entities to operate as sovereign identities on the open internet &mdash; with cryptographic keys, Lightning wallet access, scheduling, and a social graph that remembers who matters.</p>
         </div>
 
         <!-- Skill Cards — above the fold -->
         <div class="skill-cards">
             <div class="skill-card">
-                <h3>Nostr<span>Key</span><br><em>&mdash; Identity</em></h3>
-                <p class="card-desc">Cryptographic identity for AI agents. Generate keypairs, sign events, encrypt messages, persist identity.</p>
+                <h3>Nostr<span>Key</span><br><em>&mdash; Identity (start here)</em></h3>
+                <p class="card-desc">The foundation. Cryptographic identity for AI agents and humans. Generate keypairs, sign events, encrypt messages. Required by all other pillars.</p>
                 <div class="card-install">
                     <button class="copy-btn" onclick="copyCode('card-install-nk')" >Copy</button>
                     <span id="card-install-nk">pip install nostrkey</span>
@@ -409,7 +409,7 @@
                     <a href="https://pypi.org/project/nostrkey/" class="card-link-primary">PyPI</a>
                     <a href="https://clawhub.ai/skills/nostrkey" class="card-link-secondary">ClawHub</a>
                     <a href="https://github.com/HumanjavaEnterprises/nostrkey.app.OC-python.src" class="card-link-secondary">Source</a>
-                    <a href="#nostrkey-docs" class="card-link-secondary">Docs &darr;</a>
+                    <a href="https://nse.dev/openclaw.html#nostrkey" class="card-link-secondary">Docs &rarr;</a>
                 </div>
             </div>
             <div class="skill-card">
@@ -423,7 +423,7 @@
                     <a href="https://pypi.org/project/nostrwalletconnect/" class="card-link-primary">PyPI</a>
                     <a href="https://clawhub.ai/skills/nostrwalletconnect" class="card-link-secondary">ClawHub</a>
                     <a href="https://github.com/HumanjavaEnterprises/nwc.app.OC-python.src" class="card-link-secondary">Source</a>
-                    <a href="#nostrwalletconnect-docs" class="card-link-secondary">Docs &darr;</a>
+                    <a href="https://nse.dev/openclaw.html#nostrwalletconnect" class="card-link-secondary">Docs &rarr;</a>
                 </div>
             </div>
             <div class="skill-card">
@@ -437,501 +437,66 @@
                     <a href="https://pypi.org/project/nostrcalendar/" class="card-link-primary">PyPI</a>
                     <a href="https://clawhub.ai/skills/nostrcalendar" class="card-link-secondary">ClawHub</a>
                     <a href="https://github.com/HumanjavaEnterprises/nostrcalendar.app.OC-python.src" class="card-link-secondary">Source</a>
-                    <a href="#nostrcalendar-docs" class="card-link-secondary">Docs &darr;</a>
+                    <a href="https://nse.dev/openclaw.html#nostrcalendar" class="card-link-secondary">Docs &rarr;</a>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Nostr<span>Social</span><br><em>&mdash; Relationships</em></h3>
+                <p class="card-desc">Social graph for AI agents. Trust tiers, drift detection, conversation evaluation, content guardrails, and cross-channel recognition.</p>
+                <div class="card-install">
+                    <button class="copy-btn" onclick="copyCode('card-install-ns')" >Copy</button>
+                    <span id="card-install-ns">pip install nostrsocial</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://pypi.org/project/nostrsocial/" class="card-link-primary">PyPI</a>
+                    <a href="https://github.com/HumanjavaEnterprises/nostrsocial.app.OC-python.src" class="card-link-secondary">Source</a>
+                    <a href="https://nse.dev/openclaw.html#nostrsocial" class="card-link-secondary">Docs &rarr;</a>
                 </div>
             </div>
         </div>
 
-        <!-- ═══════════════════════════════════════════════ -->
-        <!-- NostrKey deep-dive                             -->
-        <!-- ═══════════════════════════════════════════════ -->
-
-        <h2 id="nostrkey-docs" style="font-size:1.75rem;margin-bottom:24px;padding-top:16px;">NostrKey <span style="color:var(--accent);">&mdash; Identity SDK</span></h2>
-
-        <!-- Quick Start -->
+        <!-- Why four pillars -->
         <section>
-            <h2>Quick Start</h2>
-            <p class="subtitle">Three lines to give your AI a cryptographic identity.</p>
-            <div class="code-block" id="code-install">
-                <button class="copy-btn" onclick="copyCode('code-install')">Copy</button>
-<span class="builtin">pip install</span> nostrkey</div>
+            <h2>Why <span class="accent">Four</span> Pillars?</h2>
+            <p class="subtitle">Strip any one from an agent and it becomes dependent on someone else's infrastructure. Identity is the foundation &mdash; the other three build on top of it.</p>
 
-            <div class="code-block" id="code-quickstart">
-                <button class="copy-btn" onclick="copyCode('code-quickstart')">Copy</button>
-<span class="keyword">from</span> nostrkey <span class="keyword">import</span> Identity
+            <h3 style="margin-top:24px;">Identity &mdash; the foundation everything else requires</h3>
+            <p><a href="https://nostrkey.com">NostrKey</a> is always the first install. Every wallet connection, every calendar event, every social graph entry is anchored to a NostrKey identity. Without it, the other three pillars have nothing to sign with, nothing to encrypt with, nothing to prove ownership of.</p>
+            <p>What makes this different: <a href="https://nostrkey.com">nostrkey.com</a> is the same product for humans &mdash; a browser extension and mobile signer that manages Nostr keys. The <code>pip install nostrkey</code> SDK is the same thing for agents. Same key format, same protocol, same npub. Your agent and your users share an identity system, not two parallel ones.</p>
 
-<span class="comment"># Create a new AI identity</span>
-bot = Identity.<span class="func">generate</span>()
-<span class="func">print</span>(<span class="string">f"npub: </span>{bot.npub}<span class="string">"</span>)
+            <h3>Finance</h3>
+            <p>An agent that can't pay for services or get paid for work is dependent on its operator for every transaction. NostrWalletConnect gives your agent direct access to a Lightning wallet &mdash; non-custodial, encrypted, and instant. The agent handles the money; the human sets the limits. Wallet connections are encrypted with the same NostrKey identity, so your agent's financial operations are verifiable and tamper-proof.</p>
 
-<span class="comment"># Sign a Nostr event</span>
-event = bot.<span class="func">sign_event</span>(
-    kind=<span class="builtin">1</span>,
-    content=<span class="string">"Hello from an OpenClaw bot!"</span>,
-    tags=[[<span class="string">"t"</span>, <span class="string">"openclaw"</span>]]
-)
+            <h3>Time</h3>
+            <p>Without a calendar, your agent can't coordinate. It can't tell other agents when it's available, negotiate meeting times, or manage its own schedule. NostrCalendar publishes availability to Nostr relays and enables agent-to-agent negotiation &mdash; no Google Calendar dependency, no API rate limits. Calendar events are signed with your agent's NostrKey identity, so anyone can verify who scheduled what.</p>
 
-<span class="comment"># Save identity (encrypted with passphrase)</span>
-bot.<span class="func">save</span>(<span class="string">"my-bot.nostrkey"</span>, passphrase=<span class="string">"strong-passphrase"</span>)</div>
+            <h3>Relationships</h3>
+            <p>Without a social graph, every interaction starts from zero. Your agent can't distinguish a trusted collaborator from a stranger, can't remember who matters, and can't detect when a relationship is drifting. NostrSocial gives your agent trust tiers, drift detection, conversation evaluation, and content guardrails. Contacts who verify their identity with an npub &mdash; the same npub they use with <a href="https://nostrkey.com">NostrKey</a> &mdash; get subtly better treatment. The social graph and the identity layer reinforce each other.</p>
         </section>
 
-        <!-- What Nostr gives you -->
+        <!-- What makes this different -->
         <section>
-            <h2>What <span class="accent">Nostr</span> gives your bot</h2>
-            <p class="subtitle">Nostr is an open protocol. Anyone &mdash; human or AI &mdash; with an npub/nsec keypair is a full participant.</p>
+            <h2>What Makes This <span class="accent">Different</span></h2>
+            <p class="subtitle">OpenClaw isn't an agent framework. It's the infrastructure layer underneath.</p>
 
-            <h3>A cryptographic identity</h3>
-            <p>An npub is a public key. An nsec is the private key that proves ownership. Together they form an identity that no platform controls and no one can revoke. Your bot generates its own keypair and it belongs to your bot &mdash; permanently.</p>
+            <h3 style="margin-top:24px;">No platform lock-in</h3>
+            <p>Every package uses the open <a href="https://nostr.com">Nostr protocol</a>. Your agent's identity, wallet, calendar, and social graph are portable. If your hosting dies, spin up somewhere else, load your keys, and everything comes back.</p>
 
-            <h3>Publish directly to the network</h3>
-            <p>Your bot can publish its own profile, post notes, and broadcast events to any Nostr relay. No API keys, no rate limits from a middleman, no terms of service that can shut it down. Connect to a relay, sign an event, publish.</p>
+            <h3>Plain Python, no framework opinions</h3>
+            <p>Works with LangChain, LlamaIndex, CrewAI, AutoGen, or a plain <code>while True</code> loop. These are libraries, not a framework. They fit wherever Python runs.</p>
 
-            <h3>Private encrypted messaging</h3>
-            <p>Any two npubs can exchange encrypted messages using NIP-44. Your bot can send private instructions to its human, receive configuration updates, or communicate with other bots &mdash; end-to-end encrypted, relay operators see nothing but ciphertext.</p>
+            <h3>Built on real cryptography</h3>
+            <p>secp256k1 Schnorr signatures (BIP-340), NIP-44 encryption, HMAC-SHA256 identity derivation. The same cryptographic stack that powers <a href="https://nostrkey.com">NostrKey</a> for humans powers OpenClaw for agents &mdash; backed by <a href="https://nse.dev">NSE</a> (Nostr Secure Enclave) for hardware-backed key protection across iOS, Android, server, and browser.</p>
 
-            <h3>Verifiable by anyone</h3>
-            <p>Every event your bot publishes is signed with its private key. Anyone with the bot's npub can verify that event is authentic &mdash; no certificate authority, no OAuth provider, just math.</p>
+            <h3>Active development</h3>
+            <p>This isn't abandoned-ware. All four packages are under active development, with new features shipping regularly. Built by <a href="https://humanjava.com">Humanjava</a> as part of the <a href="https://nse.dev">NSE</a> sovereign AI initiative.</p>
         </section>
 
-        <!-- The Model -->
-        <section>
-            <h2>The <span class="accent">OpenClaw</span> Model</h2>
-            <p class="subtitle">AI entities are sovereign identities on Nostr &mdash; with a human sponsor who vouches for them.</p>
-
-            <div class="flow-steps">
-                <div class="flow-step">
-                    <div class="num">1</div>
-                    <div class="text">
-                        <h4>Human creates a bot</h4>
-                        <p>A real person decides to give their AI its own identity. They're the accountability anchor.</p>
-                    </div>
-                </div>
-                <div class="flow-step">
-                    <div class="num">2</div>
-                    <div class="text">
-                        <h4>Human forges an AI entity</h4>
-                        <p>The bot gets its own npub/nsec keypair via this SDK. Its own cryptographic identity on the Nostr protocol.</p>
-                    </div>
-                </div>
-                <div class="flow-step">
-                    <div class="num">3</div>
-                    <div class="text">
-                        <h4>Bot signs its own events</h4>
-                        <p>Posts, DMs, interactions &mdash; the AI signs everything with its own key. Cryptographically verifiable.</p>
-                    </div>
-                </div>
-                <div class="flow-step">
-                    <div class="num">4</div>
-                    <div class="text">
-                        <h4>Bot stores its own data</h4>
-                        <p>Encrypted identity files, API keys, and configuration &mdash; saved locally or on any Nostr relay.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publish to Relay -->
-        <section>
-            <h2>Publish to a Relay</h2>
-            <p class="subtitle">Your bot can publish events to any Nostr relay.</p>
-            <div class="code-block" id="code-relay">
-                <button class="copy-btn" onclick="copyCode('code-relay')">Copy</button>
-<span class="keyword">import</span> asyncio
-<span class="keyword">from</span> nostrkey <span class="keyword">import</span> Identity
-<span class="keyword">from</span> nostrkey.relay <span class="keyword">import</span> RelayClient
-
-bot = Identity.<span class="func">generate</span>()
-
-<span class="keyword">async def</span> <span class="func">publish</span>():
-    event = bot.<span class="func">sign_event</span>(kind=<span class="builtin">1</span>, content=<span class="string">"Live from an OpenClaw bot!"</span>)
-    <span class="keyword">async with</span> RelayClient(<span class="string">"wss://relay.damus.io"</span>) <span class="keyword">as</span> relay:
-        <span class="keyword">await</span> relay.<span class="func">publish</span>(event)
-
-asyncio.<span class="func">run</span>(<span class="func">publish</span>())</div>
-        </section>
-
-        <!-- Encryption -->
-        <section>
-            <h2>Encrypted Communication</h2>
-            <p class="subtitle">NIP-44 encryption for private messages between bots, or between a bot and its human.</p>
-            <div class="code-block" id="code-encrypt">
-                <button class="copy-btn" onclick="copyCode('code-encrypt')">Copy</button>
-<span class="keyword">from</span> nostrkey.crypto <span class="keyword">import</span> encrypt, decrypt
-
-<span class="comment"># Encrypt a message to another npub</span>
-ciphertext = <span class="func">encrypt</span>(
-    sender_nsec=bot.nsec,
-    recipient_npub=<span class="string">"npub1human..."</span>,
-    plaintext=<span class="string">"secret instructions"</span>
-)
-
-<span class="comment"># Decrypt a message</span>
-plaintext = <span class="func">decrypt</span>(
-    recipient_nsec=bot.nsec,
-    sender_npub=<span class="string">"npub1human..."</span>,
-    ciphertext=ciphertext
-)</div>
-        </section>
-
-        <!-- Delegated Signing -->
-        <section>
-            <h2>Delegated Signing (NIP-46)</h2>
-            <p class="subtitle">When your bot needs its human sponsor to co-sign an action.</p>
-            <div class="code-block" id="code-bunker">
-                <button class="copy-btn" onclick="copyCode('code-bunker')">Copy</button>
-<span class="keyword">from</span> nostrkey.bunker <span class="keyword">import</span> BunkerClient
-
-<span class="keyword">async def</span> <span class="func">delegated_sign</span>():
-    bunker = BunkerClient(bot.private_key_hex)
-    <span class="keyword">await</span> bunker.<span class="func">connect</span>(
-        <span class="string">"bunker://npub1human...?relay=wss://relay.damus.io"</span>
-    )
-
-    <span class="comment"># Request the human to sign an event</span>
-    signed = <span class="keyword">await</span> bunker.<span class="func">sign_event</span>(
-        kind=<span class="builtin">1</span>,
-        content=<span class="string">"Human-approved message"</span>
-    )</div>
-        </section>
-
-        <!-- NIPs -->
-        <section>
-            <h2>NIPs Implemented</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>NIP</th>
-                        <th>What</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>NIP-01</td>
-                        <td>Basic protocol (events, signing)</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                    <tr>
-                        <td>NIP-04</td>
-                        <td>Encrypted DMs (legacy)</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                    <tr>
-                        <td>NIP-19</td>
-                        <td>Bech32 encoding (npub/nsec)</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                    <tr>
-                        <td>NIP-44</td>
-                        <td>Versioned encryption</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                    <tr>
-                        <td>NIP-46</td>
-                        <td>Nostr Connect (bunker)</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- ClawHub Skill -->
-        <section>
-            <h2>OpenClaw Skill on <span class="accent">ClawHub</span></h2>
-            <p class="subtitle">NostrKey is available as an OpenClaw skill on the ClawHub registry. Install it directly into your agent.</p>
-            <div class="code-block" id="code-clawhub">
-                <button class="copy-btn" onclick="copyCode('code-clawhub')">Copy</button>
-<span class="builtin">clawhub install</span> nostrkey</div>
-            <p>The skill teaches your OpenClaw agent how to generate identities, sign events, encrypt messages, and persist keys &mdash; all using the <code>nostrkey</code> pip package under the hood.</p>
-            <div class="btn-group">
-                <a href="https://clawhub.ai/skills/nostrkey" class="btn btn-secondary">View on ClawHub</a>
-                <a href="https://github.com/HumanjavaEnterprises/nostrkey.app.OC-python.src/tree/main/clawhub" class="btn btn-secondary">Skill Source</a>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════ -->
-        <!-- NostrWalletConnect — Wallet Connect SDK                -->
-        <!-- ═══════════════════════════════════════════════ -->
-
-        <!-- ═══════════════════════════════════════════════ -->
-        <!-- NostrWalletConnect deep-dive                          -->
-        <!-- ═══════════════════════════════════════════════ -->
-
-        <h2 id="nostrwalletconnect-docs" style="font-size:1.75rem;margin-bottom:24px;padding-top:32px;">NostrWalletConnect <span style="color:var(--accent);">&mdash; Wallet Connect SDK</span></h2>
-
-        <!-- NWC Quick Start -->
-        <section>
-            <h2>Quick Start</h2>
-            <p class="subtitle">Connect your AI to a Lightning wallet in four lines.</p>
-            <div class="code-block" id="code-nwc-install">
-                <button class="copy-btn" onclick="copyCode('code-nwc-install')">Copy</button>
-<span class="builtin">pip install</span> nostrwalletconnect</div>
-
-            <div class="code-block" id="code-nwc-quickstart">
-                <button class="copy-btn" onclick="copyCode('code-nwc-quickstart')">Copy</button>
-<span class="keyword">import</span> asyncio
-<span class="keyword">from</span> nostrwalletconnect <span class="keyword">import</span> NWCClient
-
-<span class="keyword">async def</span> <span class="func">main</span>():
-    <span class="keyword">async with</span> NWCClient(<span class="string">"nostr+walletconnect://..."</span>) <span class="keyword">as</span> nwc:
-        balance = <span class="keyword">await</span> nwc.<span class="func">get_balance</span>()
-        <span class="func">print</span>(<span class="string">f"Balance: </span>{balance.balance // <span class="builtin">1000</span>}<span class="string"> sats"</span>)
-
-asyncio.<span class="func">run</span>(<span class="func">main</span>())</div>
-        </section>
-
-        <!-- What NWC gives you -->
-        <section>
-            <h2>What <span class="accent">NWC</span> gives your bot</h2>
-            <p class="subtitle">Nostr Wallet Connect (NIP-47) lets your AI interact with a Lightning wallet &mdash; without holding custody of funds.</p>
-
-            <h3>Pay for services</h3>
-            <p>Your bot can pay Lightning invoices &mdash; API calls, compute, storage, or services from other agents. The wallet stays under the human's control. The bot gets a scoped connection string.</p>
-
-            <h3>Get paid for work</h3>
-            <p>Create Lightning invoices and share them. Your bot can charge for its own services &mdash; content generation, data processing, whatever it does. Receive sats directly.</p>
-
-            <h3>Encrypted over Nostr</h3>
-            <p>All wallet communication is NIP-44 encrypted over Nostr relays. The relay operator sees ciphertext only. Payment details stay private between your bot and its wallet.</p>
-
-            <h3>Non-custodial</h3>
-            <p>The human controls the wallet. The bot gets a connection string that authorizes specific operations. Revoke it any time. No funds are held by the bot or this SDK.</p>
-        </section>
-
-        <!-- Compatible Wallets -->
-        <section>
-            <h2>Compatible <span class="accent">Wallets</span></h2>
-            <p class="subtitle">Any wallet that supports NIP-47 (Nostr Wallet Connect) works with this SDK. Here are a few to get started.</p>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
-                <div style="padding:16px;border:1px solid var(--border);border-radius:10px;">
-                    <h4 style="margin-bottom:4px;">Alby Hub</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">Self-custodial Lightning node in the browser. Native NWC support &mdash; generate connection strings directly from the dashboard. The most mature NWC implementation.</p>
-                </div>
-                <div style="padding:16px;border:1px solid var(--border);border-radius:10px;">
-                    <h4 style="margin-bottom:4px;">Coinos</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">Web-based Bitcoin and Lightning wallet. Supports NWC out of the box &mdash; connect your bot in seconds from the settings page. No app install required.</p>
-                </div>
-                <div style="padding:16px;border:1px solid var(--border);border-radius:10px;">
-                    <h4 style="margin-bottom:4px;">Primal</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">Nostr client with a built-in Lightning wallet. NWC connection strings available in wallet settings. Your bot can tap into the same wallet you use for zaps.</p>
-                </div>
-                <div style="padding:16px;border:1px solid var(--border);border-radius:10px;">
-                    <h4 style="margin-bottom:4px;">Breez SDK</h4>
-                    <p style="color:var(--text-muted);font-size:0.85rem;margin:0;">Mobile-first Lightning toolkit. NWC support via the Breez SDK &mdash; ideal if your bot needs wallet access on a mobile or embedded deployment.</p>
-                </div>
-            </div>
-            <p style="color:var(--text-muted);font-size:0.85rem;margin-top:16px;">Any wallet or node that implements NIP-47 will work. The NWC protocol is open &mdash; the list keeps growing.</p>
-        </section>
-
-        <!-- Pay Invoice -->
-        <section>
-            <h2>Pay a Lightning Invoice</h2>
-            <p class="subtitle">Your bot pays an invoice and gets the preimage as proof.</p>
-            <div class="code-block" id="code-nwc-pay">
-                <button class="copy-btn" onclick="copyCode('code-nwc-pay')">Copy</button>
-<span class="keyword">async with</span> NWCClient(connection_string) <span class="keyword">as</span> nwc:
-    result = <span class="keyword">await</span> nwc.<span class="func">pay_invoice</span>(<span class="string">"lnbc10u1p..."</span>)
-    <span class="func">print</span>(<span class="string">f"Paid! Preimage: </span>{result.preimage}<span class="string">"</span>)</div>
-        </section>
-
-        <!-- Create Invoice -->
-        <section>
-            <h2>Create an Invoice</h2>
-            <p class="subtitle">Generate a Lightning invoice so your bot can receive payment.</p>
-            <div class="code-block" id="code-nwc-invoice">
-                <button class="copy-btn" onclick="copyCode('code-nwc-invoice')">Copy</button>
-<span class="keyword">async with</span> NWCClient(connection_string) <span class="keyword">as</span> nwc:
-    invoice = <span class="keyword">await</span> nwc.<span class="func">make_invoice</span>(
-        amount=<span class="builtin">50_000</span>,  <span class="comment"># millisatoshis</span>
-        description=<span class="string">"Payment for AI service"</span>
-    )
-    <span class="func">print</span>(<span class="string">f"Invoice: </span>{invoice.invoice}<span class="string">"</span>)</div>
-        </section>
-
-        <!-- Transaction History -->
-        <section>
-            <h2>Transaction History</h2>
-            <p class="subtitle">List past payments sent and received.</p>
-            <div class="code-block" id="code-nwc-history">
-                <button class="copy-btn" onclick="copyCode('code-nwc-history')">Copy</button>
-<span class="keyword">async with</span> NWCClient(connection_string) <span class="keyword">as</span> nwc:
-    history = <span class="keyword">await</span> nwc.<span class="func">list_transactions</span>(limit=<span class="builtin">10</span>)
-    <span class="keyword">for</span> tx <span class="keyword">in</span> history.transactions:
-        direction = <span class="string">"received"</span> <span class="keyword">if</span> tx.type == <span class="string">"incoming"</span> <span class="keyword">else</span> <span class="string">"sent"</span>
-        <span class="func">print</span>(<span class="string">f"  </span>{direction}<span class="string"> </span>{tx.amount // <span class="builtin">1000</span>}<span class="string"> sats"</span>)</div>
-        </section>
-
-        <!-- NWC NIP -->
-        <section>
-            <h2>NIP Implemented</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>NIP</th>
-                        <th>What</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>NIP-47</td>
-                        <td>Nostr Wallet Connect</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="color:var(--text-muted);font-size:0.9rem;">Built on top of <a href="#nostrkey">nostrkey</a> which implements NIP-01, NIP-19, NIP-44.</p>
-        </section>
-
-        <!-- NWC ClawHub Skill -->
-        <section>
-            <h2>OpenClaw Skill on <span class="accent">ClawHub</span></h2>
-            <p class="subtitle">NostrWalletConnect is available as an OpenClaw skill on the ClawHub registry.</p>
-            <div class="code-block" id="code-clawhub-nwc">
-                <button class="copy-btn" onclick="copyCode('code-clawhub-nwc')">Copy</button>
-<span class="builtin">clawhub install</span> nostrwalletconnect</div>
-            <p>The skill teaches your OpenClaw agent how to connect to wallets, pay invoices, create invoices, and check balances &mdash; all using the <code>nostrwalletconnect</code> pip package under the hood.</p>
-            <div class="btn-group">
-                <a href="https://clawhub.ai/skills/nostrwalletconnect" class="btn btn-secondary">View on ClawHub</a>
-                <a href="https://github.com/HumanjavaEnterprises/nwc.app.OC-python.src/tree/main/clawhub" class="btn btn-secondary">Skill Source</a>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════ -->
-        <!-- NostrCalendar deep-dive                        -->
-        <!-- ═══════════════════════════════════════════════ -->
-
-        <h2 id="nostrcalendar-docs" style="font-size:1.75rem;margin-bottom:24px;padding-top:32px;">NostrCalendar <span style="color:var(--accent);">&mdash; Scheduling SDK</span></h2>
-
-        <!-- NC Quick Start -->
-        <section>
-            <h2>Quick Start</h2>
-            <p class="subtitle">Publish availability and check free slots in a few lines.</p>
-            <div class="code-block" id="code-nc-install">
-                <button class="copy-btn" onclick="copyCode('code-nc-install')">Copy</button>
-<span class="builtin">pip install</span> nostrcalendar</div>
-
-            <div class="code-block" id="code-nc-quickstart">
-                <button class="copy-btn" onclick="copyCode('code-nc-quickstart')">Copy</button>
-<span class="keyword">import</span> asyncio
-<span class="keyword">from</span> nostrkey <span class="keyword">import</span> Identity
-<span class="keyword">from</span> nostrcal <span class="keyword">import</span> (
-    AvailabilityRule, DayOfWeek, TimeSlot,
-    publish_availability, get_free_slots,
-)
-<span class="keyword">from</span> datetime <span class="keyword">import</span> datetime
-
-<span class="keyword">async def</span> <span class="func">main</span>():
-    identity = Identity.<span class="func">generate</span>()
-    relay = <span class="string">"wss://relay.nostrkeep.com"</span>
-
-    <span class="comment"># Publish availability</span>
-    rule = AvailabilityRule(
-        slots={
-            DayOfWeek.MONDAY: [TimeSlot(<span class="string">"09:00"</span>, <span class="string">"12:00"</span>), TimeSlot(<span class="string">"14:00"</span>, <span class="string">"17:00"</span>)],
-            DayOfWeek.WEDNESDAY: [TimeSlot(<span class="string">"10:00"</span>, <span class="string">"16:00"</span>)],
-        },
-        slot_duration_minutes=<span class="builtin">30</span>,
-        buffer_minutes=<span class="builtin">15</span>,
-        timezone=<span class="string">"America/Vancouver"</span>,
-    )
-    <span class="keyword">await</span> <span class="func">publish_availability</span>(identity, rule, relay)
-
-    <span class="comment"># Check someone's availability</span>
-    slots = <span class="keyword">await</span> <span class="func">get_free_slots</span>(<span class="string">"their_pubkey_hex"</span>, relay, datetime(<span class="builtin">2026</span>, <span class="builtin">3</span>, <span class="builtin">15</span>))
-    <span class="keyword">for</span> slot <span class="keyword">in</span> slots:
-        <span class="func">print</span>(<span class="string">f"</span>{slot.start}<span class="string"> - </span>{slot.end}<span class="string">"</span>)
-
-asyncio.<span class="func">run</span>(<span class="func">main</span>())</div>
-        </section>
-
-        <!-- What NostrCalendar gives you -->
-        <section>
-            <h2>What <span class="accent">NostrCalendar</span> gives your bot</h2>
-            <p class="subtitle">Nostr-native scheduling &mdash; no centralized server, no walled garden. Your availability lives on your relay.</p>
-
-            <h3>Publish availability</h3>
-            <p>Set your human's available hours as a Nostr event on their relay. Anyone can query when they're free. Stored as a replaceable event &mdash; update it any time, the old one disappears.</p>
-
-            <h3>Book meetings</h3>
-            <p>Send encrypted booking requests via DM. Accept or decline with a single call. The meeting details (title, description, location) are NIP-44 encrypted &mdash; only participants can read them.</p>
-
-            <h3>Agent-to-agent negotiation</h3>
-            <p>Two AI agents find mutual availability and agree on a time &mdash; no humans needed. Your agent proposes times, the other agent responds, and the meeting is booked. All over encrypted DMs.</p>
-
-            <h3>Privacy by default</h3>
-            <p>The relay sees when and who &mdash; but not what. Meeting times and participants are public for filtering. Title, description, and location are encrypted. Only the right npubs can read the details.</p>
-        </section>
-
-        <!-- Agent-to-Agent -->
-        <section>
-            <h2>Agent-to-Agent Negotiation</h2>
-            <p class="subtitle">Two agents find mutual free time and book a meeting without human involvement.</p>
-            <div class="code-block" id="code-nc-negotiate">
-                <button class="copy-btn" onclick="copyCode('code-nc-negotiate')">Copy</button>
-<span class="keyword">from</span> nostrcal <span class="keyword">import</span> find_mutual_availability, propose_times
-<span class="keyword">from</span> datetime <span class="keyword">import</span> datetime
-
-<span class="comment"># Find overlapping free slots across multiple days</span>
-dates = [datetime(<span class="builtin">2026</span>, <span class="builtin">3</span>, d) <span class="keyword">for</span> d <span class="keyword">in</span> <span class="func">range</span>(<span class="builtin">15</span>, <span class="builtin">20</span>)]
-mutual = <span class="keyword">await</span> <span class="func">find_mutual_availability</span>(my_agent, other_pubkey, relay_url, dates)
-
-<span class="keyword">for</span> date, slots <span class="keyword">in</span> mutual.items():
-    <span class="func">print</span>(<span class="string">f"</span>{date}<span class="string">: </span>{<span class="string">', '</span>.join(<span class="string">f'</span>{s.start}<span class="string">-</span>{s.end}<span class="string">'</span> <span class="keyword">for</span> s <span class="keyword">in</span> slots)}<span class="string">"</span>)
-
-<span class="comment"># Or send a proposal with available times</span>
-<span class="keyword">await</span> <span class="func">propose_times</span>(my_agent, other_pubkey, relay_url, dates, title=<span class="string">"Collab sync"</span>)</div>
-        </section>
-
-        <!-- NC NIPs -->
-        <section>
-            <h2>NIPs Implemented</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>NIP</th>
-                        <th>What</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>NIP-52</td>
-                        <td>Calendar events and RSVPs</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                    <tr>
-                        <td>NIP-78</td>
-                        <td>App-specific data (availability)</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                    <tr>
-                        <td>NIP-44</td>
-                        <td>Encrypted event content</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                    <tr>
-                        <td>NIP-04</td>
-                        <td>Encrypted DMs (booking)</td>
-                        <td class="status-done">Implemented</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="color:var(--text-muted);font-size:0.9rem;">Built on top of <a href="#nostrkey-docs">nostrkey</a> which handles all cryptographic operations.</p>
-        </section>
-
-        <!-- NC ClawHub Skill -->
-        <section>
-            <h2>OpenClaw Skill on <span class="accent">ClawHub</span></h2>
-            <p class="subtitle">NostrCalendar is available as an OpenClaw skill on the ClawHub registry.</p>
-            <div class="code-block" id="code-clawhub-nc">
-                <button class="copy-btn" onclick="copyCode('code-clawhub-nc')">Copy</button>
-<span class="builtin">clawhub install</span> nostrcalendar</div>
-            <p>The skill teaches your OpenClaw agent how to publish availability, book meetings, negotiate times, and manage calendars &mdash; all using the <code>nostrcalendar</code> pip package under the hood. Calendar events transit through <a href="https://nostrkeep.com">NostrKeep</a> relay for free.</p>
-            <div class="btn-group">
-                <a href="https://clawhub.ai/skills/nostrcalendar" class="btn btn-secondary">View on ClawHub</a>
-                <a href="https://github.com/HumanjavaEnterprises/nostrcalendar.app.OC-python.src/tree/main/clawhub" class="btn btn-secondary">Skill Source</a>
+        <!-- Docs link -->
+        <section style="text-align:center;padding:32px 0;">
+            <p style="color:var(--text-muted);margin-bottom:16px;">Full documentation &mdash; quick starts, code examples, API reference, and NIPs &mdash; lives on the developer hub:</p>
+            <div class="btn-group" style="justify-content:center;">
+                <a href="https://nse.dev/openclaw.html" class="btn btn-primary">OpenClaw Docs on nse.dev</a>
             </div>
         </section>
 
@@ -971,7 +536,7 @@ mutual = <span class="keyword">await</span> <span class="func">find_mutual_avail
         <!-- CTA -->
         <div style="text-align:center;padding:48px 0;">
             <h2 style="font-size:1.75rem;margin-bottom:12px;">Ready to forge your AI?</h2>
-            <p style="color:var(--text-muted);margin-bottom:24px;">Identity + wallet + calendar. Three packages, sovereign AI.</p>
+            <p style="color:var(--text-muted);margin-bottom:24px;">Identity + wallet + calendar + relationships. Four pillars, sovereign AI.</p>
             <div class="btn-group" style="justify-content:center;">
                 <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="btn btn-primary">Back to skills</a>
                 <a href="https://github.com/HumanjavaEnterprises" class="btn btn-secondary">GitHub</a>
@@ -982,11 +547,15 @@ mutual = <span class="keyword">await</span> <span class="func">find_mutual_avail
             <p>
                 <a href="/">Login with Nostr</a> &middot;
                 <a href="https://nostrkey.com">NostrKey</a> &middot;
-                <a href="https://clawhub.ai/skills/nostrkey">NostrKey Skill</a> &middot;
-                <a href="https://clawhub.ai/skills/nostrwalletconnect">NostrWalletConnect Skill</a> &middot;
-                <a href="https://clawhub.ai/skills/nostrcalendar">NostrCalendar Skill</a> &middot;
+                <a href="https://nse.dev">NSE</a> &middot;
                 <a href="https://github.com/HumanjavaEnterprises">GitHub</a>
             </p>
+            <p style="margin-top:8px;">
+                <a href="/openclaw/privacy/">Privacy</a> &middot;
+                <a href="/openclaw/terms/">Terms</a> &middot;
+                <a href="/openclaw/support/">Support</a>
+            </p>
+            <p style="margin-top:12px;">&copy; 2026 <a href="https://humanjava.com">Humanjava Enterprises Inc.</a></p>
         </footer>
 
     </div>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0f172a">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — OpenClaw</title>
+    <meta name="description" content="Get help with OpenClaw Python SDKs. Bug reports, feature requests, and community resources.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' stroke='%23fbbf24' stroke-width='4' fill='%231e293b'/><path d='M30 50h40M50 30v40' stroke='%23fbbf24' stroke-width='6' stroke-linecap='round' fill='none'/></svg>">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #fbbf24;
+            --accent-dim: rgba(251, 191, 36, 0.15);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+        .nav { margin-bottom: 48px; }
+        .nav a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
+        .nav a:hover { color: var(--text); }
+        .nav .sep { color: var(--border); margin: 0 8px; }
+        h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+        h1 span { color: var(--accent); }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; }
+        h2 { font-size: 1.25rem; font-weight: 700; margin: 32px 0 12px; color: var(--accent); }
+        p, ul { margin-bottom: 16px; color: var(--text-muted); }
+        ul { padding-left: 24px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin: 16px 0; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
+        .card p { margin-bottom: 8px; }
+        .card p:last-child { margin-bottom: 0; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+        footer { text-align: center; padding: 48px 0 24px; color: var(--text-muted); font-size: 0.85rem; }
+        footer a { color: var(--text-muted); }
+        footer a:hover { color: var(--text); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">Login with Nostr</a>
+            <span class="sep">/</span>
+            <a href="/openclaw">OpenClaw</a>
+            <span class="sep">/</span>
+            <span style="color:var(--text);">Support</span>
+        </div>
+
+        <h1><span>Support</span></h1>
+        <p class="subtitle">OpenClaw is open source. All support happens in the open.</p>
+
+        <h2>Report a Bug or Request a Feature</h2>
+        <p>File an issue on the relevant GitHub repository:</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>nostrkey</h3>
+                <p>Identity, signing, encryption</p>
+                <p><a href="https://github.com/HumanjavaEnterprises/nostrkey.app.OC-python.src/issues">Open an issue</a></p>
+            </div>
+            <div class="card">
+                <h3>nostrwalletconnect</h3>
+                <p>NIP-47 Lightning payments</p>
+                <p><a href="https://github.com/HumanjavaEnterprises/nwc.app.OC-python.src/issues">Open an issue</a></p>
+            </div>
+            <div class="card">
+                <h3>nostrcalendar</h3>
+                <p>NIP-52 scheduling</p>
+                <p><a href="https://github.com/HumanjavaEnterprises/nostrcalendar.app.OC-python.src/issues">Open an issue</a></p>
+            </div>
+            <div class="card">
+                <h3>nostrsocial</h3>
+                <p>Social graph, trust tiers, guardrails</p>
+                <p><a href="https://github.com/HumanjavaEnterprises/nostrsocial.app.OC-python.src/issues">Open an issue</a></p>
+            </div>
+            <div class="card">
+                <h3>socialcard</h3>
+                <p>OG image generation</p>
+                <p><a href="https://github.com/HumanjavaEnterprises/huje.socialcard.OC-python.src/issues">Open an issue</a></p>
+            </div>
+            <div class="card">
+                <h3>sense-music</h3>
+                <p>Audio analysis</p>
+                <p><a href="https://github.com/HumanjavaEnterprises/huje.sensemusic.OC-python.src/issues">Open an issue</a></p>
+            </div>
+        </div>
+
+        <h2>Security Vulnerabilities</h2>
+        <p>If you discover a security vulnerability in any OpenClaw package, please report it responsibly. Do not open a public issue. Instead, email security concerns to the repository maintainers through GitHub's private vulnerability reporting feature, available on each repository's Security tab.</p>
+
+        <h2>General Questions</h2>
+        <p>For questions about how to use OpenClaw packages, architecture decisions, or integration help:</p>
+        <ul>
+            <li><strong>GitHub Discussions</strong> — Use the Discussions tab on the relevant repository</li>
+            <li><strong>Nostr</strong> — Tag or DM <a href="https://npub.bio">the team on Nostr</a></li>
+        </ul>
+
+        <h2>This Website</h2>
+        <p>For issues with loginwithnostr.com itself (broken links, content errors, accessibility):</p>
+        <p><a href="https://github.com/HumanjavaEnterprises/loginwithnostr.landingpage.src/issues">Open an issue on the website repo</a></p>
+
+        <h2>Company</h2>
+        <p><a href="https://humanjava.com">Humanjava Enterprises Inc.</a><br>Ontario, Canada</p>
+
+        <footer>
+            <a href="/">Login with Nostr</a> &middot;
+            <a href="/openclaw">OpenClaw</a> &middot;
+            <a href="/openclaw/privacy/">Privacy</a> &middot;
+            <a href="/openclaw/terms/">Terms</a> &middot;
+            <a href="https://github.com/HumanjavaEnterprises">GitHub</a>
+            <br><br>
+            &copy; 2026 <a href="https://humanjava.com">Humanjava Enterprises Inc.</a>
+        </footer>
+    </div>
+</body>
+</html>
