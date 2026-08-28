@@ -10,7 +10,7 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
-    <meta name="description" content="A self-contained family of Nostr libraries for developers — TypeScript/npm for apps, Python/OpenClaw skills for AI agents. Identity, wallet, calendar, relationships, memory. MIT licensed.">
+    <meta name="description" content="A self-contained family of Nostr libraries for developers — TypeScript/npm for apps, Python agentic skills for AI agents. Identity, wallet, calendar, relationships, memory. MIT licensed.">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://loginwithnostr.com/developers/">
@@ -22,7 +22,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Build on Nostr — Developer Hub">
-    <meta name="twitter:description" content="TypeScript libraries for apps, Python/OpenClaw skills for AI agents. Self-contained, MIT licensed.">
+    <meta name="twitter:description" content="TypeScript libraries for apps, Python agentic skills for AI agents. Self-contained, MIT licensed.">
     <meta name="twitter:image" content="https://loginwithnostr.com/developers/og-image.png">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' stroke='%23fbbf24' stroke-width='4' fill='%231e293b'/><path d='M30 50h40M50 30v40' stroke='%23fbbf24' stroke-width='6' stroke-linecap='round' fill='none'/></svg>">
@@ -248,8 +248,8 @@
             </a>
             <a class="path" href="#openclaw">
                 <div class="k">I'm building an agent</div>
-                <h3>Python &amp; OpenClaw</h3>
-                <p>Give your AI its own identity, Lightning wallet, calendar, memory, and social graph.</p>
+                <h3>Python agentic skills</h3>
+                <p>Give your AI its own identity, Lightning wallet, calendar, memory, and social graph &mdash; on whatever platform you run.</p>
                 <span class="go">Browse the skills &rarr;</span>
             </a>
         </div>
@@ -276,6 +276,15 @@
                             <td><div class="nips"><span class="nip">BIP-340</span><span class="nip">NIP-01</span><span class="nip">NIP-04</span><span class="nip">NIP-19</span><span class="nip">NIP-44</span><span class="nip">NIP-46</span><span class="nip">NIP-49</span></div></td>
                             <td><span class="install"><span>npm i nostr-crypto-utils</span><button class="cp" onclick="cp(this,'npm install nostr-crypto-utils')">copy</button></span></td>
                             <td class="links"><a href="https://www.npmjs.com/package/nostr-crypto-utils">npm&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-crypto-utils">source&nbsp;&nearr;</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="pkg-name"><a href="https://www.npmjs.com/package/nostr-agentic-identity">nostr-agentic-identity</a></span><span class="ver">0.1.1</span><span class="kernel-pill">standard</span>
+                                <span class="pkg-tag">What an agentic identity <em>is</em> &mdash; six elements, one act-outward gate, zero dependencies. A definition, not a framework.</span>
+                            </td>
+                            <td><div class="nips"><span class="nip">NIP-01</span><span class="nip">NIP-05</span><span class="nip">NIP-19</span></div></td>
+                            <td><span class="install"><span>npm i nostr-agentic-identity</span><button class="cp" onclick="cp(this,'npm install nostr-agentic-identity')">copy</button></span></td>
+                            <td class="links"><a href="https://www.npmjs.com/package/nostr-agentic-identity">npm&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-agentic-identity/blob/main/SPEC.md">SPEC&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-agentic-identity">source&nbsp;&nearr;</a></td>
                         </tr>
                         <tr>
                             <td>
@@ -372,12 +381,21 @@
             </div>
         </section>
 
-        <!-- ================= OpenClaw ================= -->
+        <!-- ================= agentic skills (anchor kept as #openclaw for link stability) ================= -->
         <section id="openclaw">
             <div class="sec-head">
-                <div class="sec-eyebrow">Python &middot; OpenClaw skills</div>
+                <div class="sec-eyebrow">Python &middot; agentic skills</div>
                 <h2>Skills for AI agents</h2>
                 <p>These aren't a grab-bag. Each skill is a <strong>pillar</strong> of a sovereign AI agent &mdash; the faculties an autonomous agent needs to act, transact, plan, remember, and relate on an open network. Install what you need; wire them together with the orchestrator.</p>
+                <p>Underneath each skill is an ordinary Python library with no runtime dependency on any agent platform. What differs between platforms is the <em>wrapper</em> &mdash; the manifest, the tool registration, the handler signatures &mdash; not the capability, the cryptography, or your agent's npub.</p>
+            </div>
+
+            <div class="orchestrator-note">
+                <b>&#128295; However your platform adds skills &mdash; do that.</b>
+                Running <a href="/openclaw/">OpenClaw</a>? Install from ClawHub, the link on every row below.
+                Running <a href="/hermes/">Hermes Agent</a>? Use <code>hermes plugins install</code> against the HA repos.
+                Building on something else? <code>pip install</code> the library and call it directly &mdash; it doesn't depend on any agent framework.
+                Different wrappers, one core: same crypto, same wire format, same npub. An agent that changes runtimes keeps its identity.
             </div>
 
             <!-- Pillars -->
