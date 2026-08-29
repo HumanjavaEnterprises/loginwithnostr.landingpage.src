@@ -10,7 +10,7 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
-    <meta name="description" content="A self-contained family of Nostr libraries for developers — TypeScript/npm for apps, Python agentic skills for AI agents. Identity, wallet, calendar, relationships, memory. MIT licensed.">
+    <meta name="description" content="A self-contained family of Nostr libraries for developers — TypeScript/npm for apps, Python agentic skills for AI agents. Identity, wallet, calendar, relationships, memory. MIT (one fair-code).">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://loginwithnostr.com/developers/">
@@ -22,7 +22,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Build on Nostr — Developer Hub">
-    <meta name="twitter:description" content="TypeScript libraries for apps, Python agentic skills for AI agents. Self-contained, MIT licensed.">
+    <meta name="twitter:description" content="TypeScript libraries for apps, Python agentic skills for AI agents. Self-contained, MIT + fair-code.">
     <meta name="twitter:image" content="https://loginwithnostr.com/developers/og-image.png">
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' stroke='%23fbbf24' stroke-width='4' fill='%231e293b'/><path d='M30 50h40M50 30v40' stroke='%23fbbf24' stroke-width='6' stroke-linecap='round' fill='none'/></svg>">
@@ -221,14 +221,14 @@
 
         <!-- Hero -->
         <div class="hero">
-            <div class="hero-badge">Developer Hub &middot; MIT Licensed &middot; Dogfooded in production</div>
+            <div class="hero-badge">Developer Hub &middot; MIT &amp; fair-code &middot; Dogfooded in production</div>
             <h1>Build on <span>Nostr</span></h1>
             <p>One family of libraries for putting Nostr into real software &mdash; from a login button to a fully sovereign AI agent. A self-contained stack: every layer is ours, from the <code>secp256k1</code> primitives up &mdash; minimal dependencies, no lock-in.</p>
             <div class="stat-strip">
                 <div class="stat"><b>17</b><small>published packages</small></div>
                 <div class="stat"><b>8</b><small>TypeScript libraries</small></div>
                 <div class="stat"><b>9</b><small>AI-agent skills</small></div>
-                <div class="stat"><b>MIT</b><small>throughout</small></div>
+                <div class="stat"><b>MIT</b><small>+ fair-code</small></div>
             </div>
         </div>
 
@@ -285,6 +285,24 @@
                             <td><div class="nips"><span class="nip">NIP-01</span><span class="nip">NIP-05</span><span class="nip">NIP-19</span></div></td>
                             <td><span class="install"><span>npm i nostr-agentic-identity</span><button class="cp" onclick="cp(this,'npm install nostr-agentic-identity')">copy</button></span></td>
                             <td class="links"><a href="https://www.npmjs.com/package/nostr-agentic-identity">npm&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-agentic-identity/blob/main/SPEC.md">SPEC&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-agentic-identity">source&nbsp;&nearr;</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="pkg-name"><a href="https://www.npmjs.com/package/nostr-zpub-utilities">nostr-zpub-utilities</a></span><span class="ver">0.1.1</span><span class="kernel-pill">standard</span>
+                                <span class="pkg-tag">Where value reaches an entity &mdash; BIP-84 BTC/LTC receiving keys derived from a Nostr identity root. Seed-side only; the chain is never guessed.</span>
+                            </td>
+                            <td><div class="nips"><span class="nip">NIP-06</span><span class="nip">BIP-84</span><span class="nip">SLIP-132</span></div></td>
+                            <td><span class="install"><span>npm i nostr-zpub-utilities</span><button class="cp" onclick="cp(this,'npm install nostr-zpub-utilities')">copy</button></span></td>
+                            <td class="links"><a href="https://www.npmjs.com/package/nostr-zpub-utilities">npm&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-zpub-utilities/blob/main/SPEC.md">SPEC&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-zpub-utilities">source&nbsp;&nearr;</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="pkg-name"><a href="https://www.npmjs.com/package/nostr-business-manifest">nostr-business-manifest</a></span><span class="ver">0.1.1</span><span class="kernel-pill">standard</span>
+                                <span class="pkg-tag">What a business entity <em>is</em> &mdash; build, sign and verify the <code>bpub-business/0.1</code> manifest (the format name, not a bech32 prefix). Refuses to embed raw extended keys. <strong>Code: fair-code; schema: CC BY 4.0.</strong></span>
+                            </td>
+                            <td><div class="nips"><span class="nip">NIP-01</span><span class="nip">NIP-05</span><span class="nip">NIP-78</span></div></td>
+                            <td><span class="install"><span>npm i nostr-business-manifest</span><button class="cp" onclick="cp(this,'npm install nostr-business-manifest')">copy</button></span></td>
+                            <td class="links"><a href="https://www.npmjs.com/package/nostr-business-manifest">npm&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-business-manifest/blob/main/SPEC.md">SPEC&nbsp;&nearr;</a><a href="https://github.com/HumanjavaEnterprises/nostr-business-manifest">source&nbsp;&nearr;</a></td>
                         </tr>
                         <tr>
                             <td>
@@ -538,7 +556,7 @@ balance = <span class="keyword">await</span> wallet.<span class="func">get_balan
         <!-- CTA -->
         <div class="cta">
             <h2>Everything's open source</h2>
-            <p>MIT licensed, on GitHub, and driven by a single public registry. Star it, fork it, file an issue.</p>
+            <p>MIT (business-manifest is fair-code), on GitHub, and driven by a single public registry. Star it, fork it, file an issue.</p>
             <div class="btn-group">
                 <a href="https://github.com/HumanjavaEnterprises" class="btn btn-primary">View on GitHub</a>
                 <a href="/" class="btn btn-secondary">Back to Login with Nostr</a>
