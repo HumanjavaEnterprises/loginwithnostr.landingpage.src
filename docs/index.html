@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" style="background:#0f172a">
 <head>
+  <meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'none'; script-src 'self' 'unsafe-inline' https://nostrkey.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; upgrade-insecure-requests">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login with Nostr: Add Nostr authentication to any website</title>
+  <link rel="canonical" href="https://loginwithnostr.com/">
     <meta name="description" content="Add passwordless Nostr login to your website in 2 lines of code. No backend required. Free and open source.">
 
     <meta property="og:type" content="website">
@@ -117,7 +119,7 @@
             position: relative;
         }
 
-        .code-block .comment { color: #6a737d; }
+        .code-block .comment { color: #8b949e; }
         .code-block .tag { color: #7ee787; }
         .code-block .attr { color: #79c0ff; }
         .code-block .string { color: #a5d6ff; }
@@ -129,7 +131,7 @@
             top: 12px;
             right: 12px;
             background: var(--border);
-            color: var(--text-muted);
+            color: var(--text-code);
             border: none;
             border-radius: 6px;
             padding: 4px 10px;
