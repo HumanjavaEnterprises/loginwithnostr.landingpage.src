@@ -3,13 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login with Nostr — Add Nostr authentication to any website</title>
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-cCKIG9VgnWbPbDut0ABYe.js"></script>
-    <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
-    </script>
+    <title>Login with Nostr: Add Nostr authentication to any website</title>
     <meta name="description" content="Add passwordless Nostr login to your website in 2 lines of code. No backend required. Free and open source.">
 
     <meta property="og:type" content="website">
@@ -110,6 +104,7 @@
         }
 
         .code-block {
+            white-space: pre;
             background: var(--bg-code);
             border: 1px solid var(--border);
             border-radius: 10px;
@@ -379,69 +374,27 @@
             margin-bottom: 24px;
         }
 
-        .bunker-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(74, 222, 128, 0.1);
-            color: #4ade80;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+
+
+
+
+
+
+
+        .bunker-steps-intro {
+            color: var(--text);
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
 
-        .bunker-status .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #4ade80;
-            animation: pulse-dot 2s ease-in-out infinite;
+        .bunker-steps {
+            margin: 0 0 20px 20px;
+            padding: 0;
+            color: var(--text-muted);
+            line-height: 1.9;
         }
 
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .bunker-uri-box {
-            background: var(--bg-code);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .bunker-uri-box code {
-            flex: 1;
-            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-            font-size: 0.8rem;
-            color: var(--accent);
-            word-break: break-all;
-            line-height: 1.4;
-        }
-
-        .bunker-uri-box .copy-uri-btn {
-            flex-shrink: 0;
-            background: var(--accent);
-            color: var(--bg);
-            border: none;
-            border-radius: 8px;
-            padding: 8px 16px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.15s, box-shadow 0.15s;
-        }
-
-        .bunker-uri-box .copy-uri-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
-        }
+        .bunker-steps strong { color: var(--accent); }
 
         .bunker-hint {
             color: var(--text-muted);
@@ -456,34 +409,10 @@
             line-height: 1.5;
         }
 
-        .btn-stop {
-            background: transparent;
-            color: #f87171;
-            border: 1px solid #f87171;
-            padding: 10px 24px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.15s;
-        }
 
-        .btn-stop:hover {
-            background: rgba(248, 113, 113, 0.1);
-        }
 
-        .bunker-install {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
 
-        .bunker-install a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
 
-        .bunker-install a:hover { text-decoration: underline; }
 
         /* Footer */
         footer {
@@ -524,25 +453,19 @@
         <div class="code-section">
             <h2><span class="step-number">1</span> Add the script</h2>
             <p class="subtitle">One script tag. Loads from the CDN, self-initializes.</p>
-            <div class="code-block" id="code-1">
-                <button class="copy-btn" onclick="copyCode('code-1')">Copy</button>
-<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"https://nostrkey.com/login.js"</span><span class="tag">&gt;&lt;/script&gt;</span></div>
+            <div class="code-block" id="code-1"><button class="copy-btn" onclick="copyCode('code-1')">Copy</button><span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"https://nostrkey.com/login.js"</span><span class="tag">&gt;&lt;/script&gt;</span></div>
         </div>
 
         <div class="code-section">
             <h2><span class="step-number">2</span> Add the button</h2>
             <p class="subtitle">Drop a div anywhere on your page. The script renders the button.</p>
-            <div class="code-block" id="code-2">
-                <button class="copy-btn" onclick="copyCode('code-2')">Copy</button>
-<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="string">"nostr-login"</span><span class="tag">&gt;&lt;/div&gt;</span></div>
+            <div class="code-block" id="code-2"><button class="copy-btn" onclick="copyCode('code-2')">Copy</button><span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="string">"nostr-login"</span><span class="tag">&gt;&lt;/div&gt;</span></div>
         </div>
 
         <div class="code-section">
             <h2><span class="step-number">3</span> Listen for login</h2>
             <p class="subtitle">When the user authenticates, you get their public key. That's their identity.</p>
-            <div class="code-block" id="code-3">
-                <button class="copy-btn" onclick="copyCode('code-3')">Copy</button>
-<span class="keyword">document</span>.<span class="func">addEventListener</span>(<span class="string">'nostr:login'</span>, <span class="keyword">function</span>(e) {
+            <div class="code-block" id="code-3"><button class="copy-btn" onclick="copyCode('code-3')">Copy</button><span class="keyword">document</span>.<span class="func">addEventListener</span>(<span class="string">'nostr:login'</span>, <span class="keyword">function</span>(e) {
     <span class="keyword">const</span> pubkey = e.detail.pubkey;
     <span class="comment">// That's it. This is the user's unique, permanent identity.</span>
     <span class="comment">// No password to hash. No email to verify. No OAuth token to refresh.</span>
@@ -558,47 +481,33 @@
             <div class="demo-result" id="demo-result"></div>
         </div>
 
-        <!-- Bunker URL Generator -->
+        <!-- Bunker URL: created in NostrKey, not by this page -->
         <div class="bunker-widget" id="bunker-widget">
             <h2>Your Keys, Your Terms</h2>
-            <p class="subtitle">Create a bunker URL that lets any Nostr app request signatures through a relay. Your private key never leaves your browser.</p>
+            <p class="subtitle">A bunker URL lets any Nostr app request signatures through a relay. Your private key stays in NostrKey and never reaches the app.</p>
 
-            <!-- State: no extension -->
-            <div id="bunker-no-ext" style="display:none">
-                <p class="bunker-install">You need <a href="https://nostrkey.com">NostrKey</a> to create a bunker URL. It's free, takes 30 seconds.</p>
-                <div style="margin-top:16px">
-                    <a href="https://nostrkey.com" class="btn btn-primary" style="font-size:0.9rem;padding:12px 24px;">Get NostrKey</a>
-                </div>
-            </div>
+            <p class="bunker-steps-intro">You create one from the extension:</p>
+            <ol class="bunker-steps">
+                <li>Open NostrKey and unlock it.</li>
+                <li>Pick the profile you want to sign with.</li>
+                <li>Open its Bunker panel.</li>
+                <li>Press <strong>Create Bunker URL</strong>, then copy it.</li>
+            </ol>
 
-            <!-- State: ready -->
-            <div id="bunker-ready" style="display:none">
-                <button id="btn-create-bunker" class="btn btn-primary" style="font-size:0.95rem;">Create My Bunker URL</button>
-            </div>
+            <p class="bunker-hint">Paste that URL into any app that supports NIP-46 with NIP-44 encryption. Amethyst, Coracle and Nostrudel all do.</p>
+            <p class="bunker-warning" style="font-weight:600;margin-bottom:8px;">Never share this URL publicly. Anyone with it can sign events as you.</p>
+            <p class="bunker-warning">Only the extension can start a bunker. A web page cannot do it on your behalf, and NostrKey blocks any page that tries.</p>
 
-            <!-- State: active -->
-            <div id="bunker-active" style="display:none">
-                <div class="bunker-status"><span class="dot"></span> Bunker Active</div>
-                <div class="bunker-uri-box">
-                    <code id="bunker-uri-display"></code>
-                    <button class="copy-uri-btn" id="btn-copy-uri">Copy</button>
-                </div>
-                <p class="bunker-hint">Copy this URL and paste it into any app that supports NIP-46 bunker login &mdash; Amethyst, Coracle, Nostrudel, or any other Nostr client.</p>
-                <p class="bunker-warning" style="font-weight:600;margin-bottom:8px;">Never share this URL publicly. Anyone with it can sign events as you.</p>
-                <p class="bunker-warning">This URL is active as long as this page is open. Closing this tab will deactivate it.</p>
-                <div style="margin-top:20px">
-                    <button class="btn-stop" id="btn-stop-bunker">Disconnect</button>
-                </div>
+            <div style="margin-top:20px">
+                <a href="https://nostrkey.com" class="btn btn-primary" style="font-size:0.9rem;padding:12px 24px;">Get NostrKey</a>
             </div>
         </div>
 
         <!-- OpenClaw -->
         <div style="margin:32px 0;padding:36px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
             <h2 style="color:var(--accent);font-size:1.4rem;margin-bottom:8px;">Building an AI agent?</h2>
-            <p style="color:var(--text-muted);margin-bottom:16px;">Your bot deserves its own identity and wallet. <strong style="color:var(--text);">NostrKey</strong> gives it cryptographic identity. <strong style="color:var(--text);">NostrWalletConnect</strong> gives it Lightning wallet access. Both are plain Python libraries with no agent-framework dependency &mdash; add them however your platform adds skills.</p>
-            <div class="code-block" id="code-openclaw" style="margin-bottom:16px;">
-                <button class="copy-btn" onclick="copyCode('code-openclaw')">Copy</button>
-<span class="keyword">from</span> nostrkey <span class="keyword">import</span> Identity
+            <p style="color:var(--text-muted);margin-bottom:16px;">Your bot deserves its own identity and wallet. <strong style="color:var(--text);">NostrKey</strong> gives it cryptographic identity. <strong style="color:var(--text);">NostrWalletConnect</strong> gives it Lightning wallet access. Both are plain Python libraries with no agent-framework dependency. Add them however your platform adds skills.</p>
+            <div class="code-block" id="code-openclaw" style="margin-bottom:16px;"><button class="copy-btn" onclick="copyCode('code-openclaw')">Copy</button><span class="keyword">from</span> nostrkey <span class="keyword">import</span> Identity
 <span class="keyword">from</span> nostrwalletconnect <span class="keyword">import</span> NWCClient
 
 bot = Identity.<span class="func">generate</span>()
@@ -704,15 +613,15 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
                 <div class="num">3</div>
                 <div class="text">
                     <h3>Your site receives a public key</h3>
-                    <p>A <code>nostr:login</code> event fires with the user's public key. Store it, use it as a user ID, look up their profile — it's a permanent, cryptographic identity.</p>
+                    <p>A <code>nostr:login</code> event fires with the user's public key. Store it, use it as a user ID, look up their profile. It's a permanent, cryptographic identity.</p>
                 </div>
             </div>
 
             <div class="how-step">
                 <div class="num">4</div>
                 <div class="text">
-                    <h3>Done. No token refresh. No session expiry.</h3>
-                    <p>The public key is the identity. You can verify it any time. The private key never leaves the user's device.</p>
+                    <h3>Done. The public key is the identity.</h3>
+                    <p>No password to store and no OAuth token to refresh. You still set your own session length, and you can ask for a fresh signature whenever it matters. The private key never leaves the user's device.</p>
                 </div>
             </div>
         </div>
@@ -721,9 +630,7 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
         <div class="events-section">
             <h2>Options</h2>
             <p class="subtitle">Customize the button appearance and behavior.</p>
-            <div class="code-block" id="code-opts">
-                <button class="copy-btn" onclick="copyCode('code-opts')">Copy</button>
-<span class="comment">&lt;!-- Dark theme (default) --&gt;</span>
+            <div class="code-block" id="code-opts"><button class="copy-btn" onclick="copyCode('code-opts')">Copy</button><span class="comment">&lt;!-- Dark theme (default) --&gt;</span>
 <span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="string">"nostr-login"</span> <span class="attr">data-theme</span>=<span class="string">"dark"</span><span class="tag">&gt;&lt;/div&gt;</span>
 
 <span class="comment">&lt;!-- Light theme --&gt;</span>
@@ -739,17 +646,24 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
         <div class="events-section">
             <h2>Events</h2>
             <p class="subtitle">Listen for authentication state changes.</p>
-            <div class="code-block" id="code-events">
-                <button class="copy-btn" onclick="copyCode('code-events')">Copy</button>
-<span class="comment">// User authenticated</span>
-<span class="keyword">document</span>.<span class="func">addEventListener</span>(<span class="string">'nostr:login'</span>, (e) => {
-    <span class="keyword">const</span> { pubkey } = e.detail;
+            <div class="code-block" id="code-events"><button class="copy-btn" onclick="copyCode('code-events')">Copy</button><span class="comment">// User authenticated</span>
+<span class="keyword">document</span>.<span class="func">addEventListener</span>(<span class="string">'nostr:login'</span>, <span class="keyword">async</span> (e) => {
+    <span class="keyword">const</span> url = location.origin + <span class="string">'/api/auth/nostr'</span>;
 
-    <span class="comment">// Send to your backend</span>
-    <span class="func">fetch</span>(<span class="string">'/api/auth/nostr'</span>, {
+    <span class="comment">// NIP-98 (kind 27235): proof of key possession, bound to</span>
+    <span class="comment">// this exact URL and method, and stamped with a timestamp.</span>
+    <span class="keyword">const</span> auth = <span class="keyword">await</span> window.nostr.<span class="func">signEvent</span>({
+        kind: 27235,
+        created_at: Math.<span class="func">floor</span>(Date.<span class="func">now</span>() / 1000),
+        tags: [[<span class="string">'u'</span>, url], [<span class="string">'method'</span>, <span class="string">'POST'</span>]],
+        content: <span class="string">''</span>
+    });
+
+    <span class="comment">// Your server verifies the signature, the u tag, the method,</span>
+    <span class="comment">// and that created_at is inside its allowed window.</span>
+    <span class="keyword">await</span> <span class="func">fetch</span>(url, {
         method: <span class="string">'POST'</span>,
-        headers: { <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> },
-        body: JSON.<span class="func">stringify</span>({ pubkey })
+        headers: { Authorization: <span class="string">'Nostr '</span> + <span class="func">btoa</span>(JSON.<span class="func">stringify</span>(auth)) }
     });
 });</div>
         </div>
@@ -760,7 +674,7 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
 
             <div class="faq-item">
                 <h3>What is Nostr?</h3>
-                <p>Nostr is an open protocol for decentralized identity and communication. Think of it as a universal login system where users own their identity through cryptographic keys — no company controls it.</p>
+                <p>Nostr is an open protocol for decentralized identity and communication. Think of it as a universal login system where users own their identity through cryptographic keys. No company controls it.</p>
             </div>
 
             <div class="faq-item">
@@ -775,7 +689,8 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
 
             <div class="faq-item">
                 <h3>How do I verify the user later?</h3>
-                <p>Ask them to sign a challenge — their key manager signs it with their private key, you verify with their public key. The <code>window.nostr.signEvent()</code> API handles this. Or simply trust the initial <code>getPublicKey()</code> for most use cases.</p>
+                <p>Ask them to sign a NIP-98 auth event (kind 27235). It carries the exact URL and HTTP method it was signed for, plus a timestamp, so the signature cannot be replayed against a different endpoint or reused later. Verify it on your server against their public key.</p>
+                <p>Never accept a bare public key as proof of identity. Public keys are public, so anyone can send you someone else's.</p>
             </div>
 
             <div class="faq-item">
@@ -795,7 +710,7 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
 
             <div class="faq-item">
                 <h3>What is a bunker URL?</h3>
-                <p>A bunker URL (NIP-46) lets you log into Nostr apps without giving them your private key. Instead, signing requests are routed through a relay back to your key manager. You stay in control &mdash; your keys never leave your browser.</p>
+                <p>A bunker URL (NIP-46) lets you log into Nostr apps without giving them your private key. Instead, signing requests are routed through a relay back to your key manager. You stay in control. Your keys never leave your browser.</p>
             </div>
         </div>
 
@@ -813,7 +728,7 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
             <p>
                 Powered by <a href="https://nostrkey.com">NostrKey</a> &middot;
                 <a href="/developers">Developers</a> &middot;
-                <a href="/python-agents/">Python agents</a> &middot;
+                <a href="https://nse.dev/python-agents.html">Python agents</a> &middot;
                 <a href="https://nse.dev">NSE</a> &middot;
                 <a href="https://github.com/HumanjavaEnterprises">GitHub</a>
             </p>
@@ -834,77 +749,6 @@ event = bot.<span class="func">sign_event</span>(kind=<span class="keyword">1</s
         document.addEventListener('nostr:login', function(e) {
             document.getElementById('demo-result').textContent = 'Logged in: ' + e.detail.pubkey;
         });
-
-        // === Bunker URL Generator ===
-        var bunkerActive = false;
-
-        function initBunkerWidget() {
-            // Check after a short delay to let extension inject window.nostr
-            setTimeout(function() {
-                if (window.nostr && window.nostr.nip46) {
-                    document.getElementById('bunker-ready').style.display = '';
-                } else {
-                    document.getElementById('bunker-no-ext').style.display = '';
-                }
-            }, 1000);
-        }
-
-        document.getElementById('btn-create-bunker').addEventListener('click', async function() {
-            var btn = this;
-            btn.disabled = true;
-            btn.textContent = 'Creating\u2026';
-
-            try {
-                var result = await window.nostr.nip46.startBunker({
-                    relayUrls: ['wss://relay.nostrkey.com']
-                });
-
-                if (!result.success) throw new Error(result.error || 'Failed to start bunker');
-
-                bunkerActive = true;
-                document.getElementById('bunker-uri-display').textContent = result.uri;
-                document.getElementById('bunker-ready').style.display = 'none';
-                document.getElementById('bunker-active').style.display = '';
-            } catch (err) {
-                btn.disabled = false;
-                btn.textContent = 'Create My Bunker URL';
-                alert('Could not start bunker: ' + err.message);
-            }
-        });
-
-        document.getElementById('btn-copy-uri').addEventListener('click', function() {
-            var uri = document.getElementById('bunker-uri-display').textContent;
-            var btn = this;
-            navigator.clipboard.writeText(uri).then(function() {
-                btn.textContent = 'Copied!';
-                setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
-            });
-        });
-
-        document.getElementById('btn-stop-bunker').addEventListener('click', function() {
-            if (window.nostr && window.nostr.nip46) {
-                window.nostr.nip46.stopBunker();
-            }
-            bunkerActive = false;
-            document.getElementById('bunker-active').style.display = 'none';
-            document.getElementById('bunker-ready').style.display = '';
-            var btn = document.getElementById('btn-create-bunker');
-            btn.disabled = false;
-            btn.textContent = 'Create My Bunker URL';
-        });
-
-        // Stop bunker when leaving the page
-        window.addEventListener('beforeunload', function(e) {
-            if (bunkerActive) {
-                if (window.nostr && window.nostr.nip46) {
-                    window.nostr.nip46.stopBunker();
-                }
-                e.preventDefault();
-                e.returnValue = 'Your bunker URL will stop working if you leave this page.';
-            }
-        });
-
-        initBunkerWidget();
 
         // Copy code blocks
         function copyCode(id) {
